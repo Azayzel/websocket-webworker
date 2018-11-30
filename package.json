@@ -7,8 +7,9 @@
   "repository": "https://github.com/Azayzel/websocket-webworker.git",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/server",
-    "build": "webpack"
+    "start": "node dist/server.js",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "dependencies": {
     "@types/express": "^4.16.0",
@@ -28,5 +29,8 @@
     "typescript": "^3.2.1",
     "webpack": "^4.26.1",
     "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
   }
 }
