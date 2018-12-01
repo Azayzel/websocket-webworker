@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as http from 'http'
 import * as React from 'react';
+import * as mongoose from 'mongoose';
 import {renderToString} from 'react-dom/server';
 import {ServerStyleSheet} from 'styled-components'
 import App from '../client/App';
@@ -39,4 +40,7 @@ const server = http.createServer(base);
 server.listen(port, () => {
 
     console.log(`Server started on ${port} :)`);
+    mongoose.connect('mongodb://localhost/NodeGit-FullStack')
+            .then(() => console.log(`Connected to Database.`)
+            .catch((err) => console.log("Error Connecting to Database: ", err));
 });
